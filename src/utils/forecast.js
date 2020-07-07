@@ -11,7 +11,9 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find loation in weather!!', undefined);
         }
         else {
-            callback(undefined, `The condition of weather is ${body.current.weather_descriptions[0]}.The temprature is ${body.current.temperature} degree and it's feels like ${body.current.feelslike} degree.`)
+            callback(undefined,
+                `On the observation time.${body.current.observation_time} The weather is ${body.current.weather_descriptions[0]}.The temprature is ${body.current.temperature} degress out. It's feels like ${body.current.feelslike} degress.
+                The humidity is ${body.current.humidity} %.`)
         }
     })
 }
